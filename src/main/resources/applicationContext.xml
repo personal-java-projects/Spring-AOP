@@ -21,8 +21,9 @@
         <!--引用myAspect的Bean为切面对象-->
         <aop:aspect ref="myAspect">
             <!--配置Target的method方法执行时要进行myAspect的before方法前置增强-->
-            <aop:before method="before" pointcut="execution(public void
-    		com.example.aop.Target.save())"></aop:before>
+<!--            <aop:before method="before" pointcut="execution(public void-->
+<!--    		com.example.aop.Target.save())"></aop:before>-->
+            <aop:before method="before" pointcut="execution(* com.example.aop.*.*(..))"/>
         </aop:aspect>
     </aop:config>
 </beans>

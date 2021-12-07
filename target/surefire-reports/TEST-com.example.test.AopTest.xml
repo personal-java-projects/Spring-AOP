@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.test.AopTest" time="0.467" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.test.AopTest" time="0.586" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="CN"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="D:\backend\java\jdk1.8.0_261\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\2948\AppData\Local\Temp\surefire8624651329028294444\surefirebooter7493721044872145828.jar C:\Users\2948\AppData\Local\Temp\surefire8624651329028294444 2021-12-07T18-12-21_808-jvmRun1 surefire4895316674405045975tmp surefire_07292049965957970262tmp"/>
+    <property name="sun.java.command" value="C:\Users\2948\AppData\Local\Temp\surefire4113268319477119307\surefirebooter7606733747883861580.jar C:\Users\2948\AppData\Local\Temp\surefire4113268319477119307 2021-12-07T18-33-10_358-jvmRun1 surefire3273527376594642043tmp surefire_02950749623037142133tmp"/>
     <property name="surefire.test.class.path" value="D:\back_programs\Spring-AOP\target\test-classes;D:\back_programs\Spring-AOP\target\classes;D:\backend\mavenRepository\org\springframework\spring-context\5.0.5.RELEASE\spring-context-5.0.5.RELEASE.jar;D:\backend\mavenRepository\org\springframework\spring-aop\5.0.5.RELEASE\spring-aop-5.0.5.RELEASE.jar;D:\backend\mavenRepository\org\springframework\spring-beans\5.0.5.RELEASE\spring-beans-5.0.5.RELEASE.jar;D:\backend\mavenRepository\org\springframework\spring-core\5.0.5.RELEASE\spring-core-5.0.5.RELEASE.jar;D:\backend\mavenRepository\org\springframework\spring-jcl\5.0.5.RELEASE\spring-jcl-5.0.5.RELEASE.jar;D:\backend\mavenRepository\org\springframework\spring-expression\5.0.5.RELEASE\spring-expression-5.0.5.RELEASE.jar;D:\backend\mavenRepository\org\aspectj\aspectjweaver\1.8.14\aspectjweaver-1.8.14.jar;D:\backend\mavenRepository\junit\junit\4.12\junit-4.12.jar;D:\backend\mavenRepository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;D:\backend\mavenRepository\org\springframework\spring-test\5.0.5.RELEASE\spring-test-5.0.5.RELEASE.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\2948"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\2948\AppData\Local\Temp\surefire8624651329028294444\surefirebooter7493721044872145828.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\2948\AppData\Local\Temp\surefire4113268319477119307\surefirebooter7606733747883861580.jar"/>
     <property name="sun.boot.class.path" value="D:\backend\java\jdk1.8.0_261\jre\lib\resources.jar;D:\backend\java\jdk1.8.0_261\jre\lib\rt.jar;D:\backend\java\jdk1.8.0_261\jre\lib\sunrsasign.jar;D:\backend\java\jdk1.8.0_261\jre\lib\jsse.jar;D:\backend\java\jdk1.8.0_261\jre\lib\jce.jar;D:\backend\java\jdk1.8.0_261\jre\lib\charsets.jar;D:\backend\java\jdk1.8.0_261\jre\lib\jfr.jar;D:\backend\java\jdk1.8.0_261\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -60,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="test1" classname="com.example.test.AopTest" time="0.003"/>
+  <testcase name="test1" classname="com.example.test.AopTest" time="0.005"/>
 </testsuite>
