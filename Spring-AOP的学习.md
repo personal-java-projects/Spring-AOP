@@ -352,3 +352,139 @@ public class AopTest {
 
 ## 基于注解的 AOP 开发
 
+#### 1、快速入门
+
+基于注解的aop开发步骤： 
+
+① 创建目标接口和目标类（内部有切点）
+
+```java
+public interface TargetInterface {
+	public void method();
+}
+```
+
+```java
+public class Target implements TargetInterface {
+    @Override
+    public void method() {
+    	System.out.println("Target running....");
+    }
+}
+```
+
+
+
+② 创建切面类（内部有增强方法） 
+
+```java
+public class MyAspect {
+    //前置增强方法
+    public void before(){
+    	System.out.println("前置代码增强.....");
+    }
+}
+
+```
+
+③ 将目标类和切面类的对象创建权交给 spring 
+
+```java
+@Component("target")
+public class Target implements TargetInterface {
+    @Override
+    public void method() {
+    	System.out.println("Target running....");
+    }
+}
+
+@Component("myAspect")
+public class MyAspect {
+    public void before(){
+    	System.out.println("前置代码增强.....");
+    }
+}
+
+```
+
+④ 在切面类中使用注解配置织入关系 
+
+```java
+@Component("myAspect")
+@Aspect
+public class MyAspect {
+    @Before("execution(* com.example.anno.*.*(..))")
+    public void before(){
+    	System.out.println("前置代码增强.....");
+    }
+}
+```
+
+⑤ 在配置文件(applicationContext-anno.xml)中开启组件扫描和 AOP 的自动代理 
+
+```xml
+<!--组件扫描-->
+<context:component-scan base-package="com.example.anno"/>
+<!--aop的自动代理-->
+<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+```
+
+⑥ 测试
+
+```java
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:applicationContext.xml")
+public class AopTest {
+    @Autowired
+    private TargetInterface target;
+    
+    @Test
+    public void test1(){
+    	target.method();
+    }
+}
+```
+
+⑦ 测试结果
+
+![image-20211208094522860](image-20211208094522860.png)
+
+#### 2、注解配置 AOP 详解
+
+1. 注解通知的类型
+
+   通知的配置语法：@通知注解(“切点表达式")
+
+   ![image-20211208095240305](image-20211208095240305.png)
+
+2. 切点表达式的抽取
+
+   同 xml 配置 aop 一样，我们可以将切点表达式抽取。抽取方式是在切面内定义方法，在该方法上使用`@Pointcut` 注解定义切点表达式，然后在在增强注解中进行引用。具体如下：
+
+   ```java
+   @@Component("myAspect")
+   @Aspect
+   public class MyAspect {
+       @Before("MyAspect.myPoint()")
+       public void before(){
+       	System.out.println("前置代码增强.....");
+       }
+       
+       @Pointcut("execution(* com.example.anno.*.*(..))")
+       public void myPoint(){}
+   }
+   ```
+
+3. 知识要点
+
+   * 注解aop开发步骤
+
+     ① 使用@Aspect标注切面类 
+
+     ② 使用@通知注解标注通知方法 
+
+     ③ 在配置文件中配置aop自动代理
+
+   * 通知注解类型
+
+     ![image-20211208095240305](image-20211208095240305.png)

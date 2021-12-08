@@ -23,7 +23,16 @@
             <!--配置Target的method方法执行时要进行myAspect的before方法前置增强-->
 <!--            <aop:before method="before" pointcut="execution(public void-->
 <!--    		com.example.aop.Target.save())"></aop:before>-->
-            <aop:before method="before" pointcut="execution(* com.example.aop.*.*(..))"/>
+<!--            <aop:before method="before" pointcut="execution(* com.example.aop.*.*(..))"/>-->
+<!--            <aop:after-returning method="afterReturning" pointcut="execution(* com.example.aop.*.*(..))"/>-->
+<!--            <aop:around method="around" pointcut="execution(* com.example.aop.*.*(..))" />-->
+<!--            <aop:after-throwing method="afterThrowing" pointcut="execution(* com.example.aop.*.*(..))" />-->
+<!--            <aop:after method="after" pointcut="execution(* com.example.aop.*.*(..))" />-->
+
+            <!-- 抽取切点表达式 -->
+            <aop:pointcut id="myPoint" expression="execution(* com.example.aop.*.*(..))"/>
+            <aop:around method="around" pointcut-ref="myPoint" />
+            <aop:around method="after" pointcut-ref="myPoint" />
         </aop:aspect>
     </aop:config>
 </beans>
