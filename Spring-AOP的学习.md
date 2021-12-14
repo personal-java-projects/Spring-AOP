@@ -50,7 +50,7 @@ public class Target implements TargetInterface {
 ```java
 Target target = new Target(); //创建目标对象
     //创建代理对象
-    TargetInterface proxy = (TargetInterface) 		Proxy.newProxyInstance(target.getClass()
+    TargetInterface proxy = (TargetInterface) Proxy.newProxyInstance(target.getClass()
     .getClassLoader(),target.getClass().getInterfaces(),new InvocationHandler() {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) 
